@@ -1,0 +1,29 @@
+
+<!--Report template, dynamic loaded and compiled-->
+
+<div data-page="report" class="page navbar-fixed">
+    <div ng-controller="ReportDetailController" style="height: 100%;">
+        <div class="navbar">
+            <div class="navbar-inner">
+                <div class="left"><a href="#" class="back link"> <i class="icon icon-back"></i><span>Back</span></a>
+                </div>
+                <div class="center sliding">{{report.name}}</div>
+                <div class="right">
+                    <a href="#"
+                       class="link icon-only open-panel">
+                        <i class="icon icon-bars"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="page-content" style="padding-top: 0px;padding-bottom: 40px;">
+            <div class="slider-container">
+                <div class="slider-wrapper">
+                    <div class="slider-slide"><h3 style="text-align: center">First slide</h3><p style="text-align: center">{{report.content}}</p></div>
+                    <div class="slider-slide"><h3 style="text-align: center">Second slide</h3><p style="text-align: center">{{report.content}}</p></div>
+                    <div class="slider-slide"><h3 style="text-align: center">Third slide</h3><p style="text-align: center">{{report.content}}</p></div>
+                </div>
+                <div class="slider-pagination"></div>
+            </div>
+        </div>
+    </div>
+</div>

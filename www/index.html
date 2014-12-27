@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html ng-app="mobile" ng-controller="InitializationController">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>{{appName}}</title>
+    <link rel="stylesheet" href="bower_components/framework7/dist/css/framework7.min.css">
+    <script src="bower_components/requirejs/require.js" data-main="js/app.js"></script>
+</head>
+<body>
+<!-- Views-->
+<div class="views">
+    <div class="view view-main" data-page="index">
+        <div class="pages" >
+            <div data-page="index" class="page navbar-fixed" ng-controller="ReportListController">
+                <div class="navbar">
+                    <div class="navbar-inner">
+                        <div class="center sliding">{{appName}}</div>
+                        <div class="right">
+                            <a href="#"
+                               class="link icon-only open-panel">
+                                <i class="icon icon-bars"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="page-content">
+                    <div class="content-block-title">{{appHeader}}</div>
+                    <div class="list-block accordion-list">
+                        <ul>
+                            <li class="accordion-item" ng-repeat="category in categories" report-repeat-directive>
+                                <a href="#" id="{{category.id}}"  class="item-link item-content" >
+                                    <div class="item-inner">
+                                        <div class="item-title">{{category.name}}</div>
+                                    </div>
+                                </a>
+                                <div class="accordion-item-content">
+                                    <div class="content-block">
+                                        <div class="list-block">
+                                            <ul>
+                                                <li ng-repeat="report in  category.reports">
+                                                    <a href="report.html?id={{report.id}}" class="item-link item-content">
+                                                        <div class="item-inner">
+                                                            <div class="item-title">{{report.name}}</div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

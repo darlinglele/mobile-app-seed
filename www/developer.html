@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Developer center</title>
+    <link rel="stylesheet" href="css/demo.css">
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var downloadPage = location.host + '/download.html';
+            var qrcodeApi = 'https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=' + downloadPage;
+            $('.qrcode').append('<img src= '+qrcodeApi +'/>');
+        });
+    </script>
+</head>
+<body style="background-color: #b72f20">
+<header>
+    <div class="center">
+        <div class="qrcode">
+        </div>
+        <div class="phone">
+            <iframe src="index.html" frameborder="0" scrolling="no"></iframe>
+        </div>
+    </div>
+</header>
+</body>
+
+
+</html>
